@@ -9,7 +9,6 @@ table
       th Route
       th[colspan="1"]
   tbody
-    - @trains.each do |train|
-      = render train
+    = render @trains
 br
 = link_to 'New Train', new_train_path

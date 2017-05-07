@@ -4,7 +4,10 @@ tr
   td
     = train.current_station.name
   td
-    = train.route.title
+    - if train.route.nil?
+      |  Not assigned to route
+    - else
+      = train.route.title
   td
     = link_to 'Show', train
   td

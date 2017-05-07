@@ -5,17 +5,8 @@ table
   thead
     tr
       th Title
-      th[colspan="3"]
+      th[colspan="3"] Actions
   tbody
-    - @railway_stations.each do |railway_station|
-      tr
-        td
-          = railway_station.name
-        td
-          = link_to 'Show', railway_station
-        td
-          = link_to 'Edit', edit_railway_station_path(railway_station)
-        td
-          = link_to 'Destroy', railway_station, method: :delete, data: { confirm: 'Are you sure?' }
+    = render @railway_stations
 br
 = link_to 'New Railway Station', new_railway_station_path

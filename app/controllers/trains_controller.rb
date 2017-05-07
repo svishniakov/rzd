@@ -1,5 +1,5 @@
 class TrainsController < ApplicationController
-  before_action :set_train, only: [:show, :edit, :update, :destroy]
+  before_action :set_train, only: %i[show edit update destroy]
 
   def index
     @trains = Train.all
@@ -42,7 +42,6 @@ class TrainsController < ApplicationController
     @train = Train.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def train_params
     params.require(:train).permit(:number, :current_station_id, :route_id)
   end

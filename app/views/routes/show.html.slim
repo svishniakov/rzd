@@ -3,6 +3,19 @@ p#notice
 p
   b Name:
   = @route.title
+p
+  b Route stations:
+  - if @route.railway_stations.empty?
+    |  Route contains no stations
+  - else
+    = render 'routes/route_stations'
+p
+  b Assigned trains:
+  - if @route.trains.empty?
+    |  There are no assigned trains to the route
+  - else
+    = render 'routes/route_trains', route: @route
+
 = link_to 'Edit', edit_route_path(@route)
-|  | 
+|  |
 = link_to 'Back', routes_path

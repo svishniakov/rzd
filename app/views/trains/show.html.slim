@@ -2,7 +2,17 @@ p#notice
   = notice
 p
   b Number:
-  = @train.number
+  =< @train.number
+p
+  b Current station:
+  =< @train.current_station.name
+p
+  b Route:
+  - if @train.route.nil?
+    |  Not assigned to route
+  - else
+    =< @train.route.title
+
 = link_to 'Edit', edit_train_path(@train)
 |  | 
 = link_to 'Back', trains_path

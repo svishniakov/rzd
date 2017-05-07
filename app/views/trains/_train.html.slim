@@ -1,0 +1,13 @@
+tr
+  td
+    = train.number
+  td
+    = train.current_station.name
+  td
+    = train.route.title
+  td
+    = link_to 'Show', train
+  td
+    = link_to 'Edit', edit_train_path(train)
+  td
+    = link_to 'Destroy', train, method: :delete, data: { confirm: 'Are you sure?' }

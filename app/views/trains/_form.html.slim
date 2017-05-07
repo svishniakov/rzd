@@ -3,5 +3,11 @@
   .field
     = f.label :number
     = f.text_field :number
+  .field
+    = f.label :current_station
+    = f.collection_select :current_station_id, RailwayStation.order(:name), :id, :name, include_blank: true
+  .field
+    = f.label :route
+    = f.collection_select :route_id, Route.order(:title), :id, :title, include_blank: true
   .actions
     = f.submit

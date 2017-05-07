@@ -5,17 +5,11 @@ table
   thead
     tr
       th Number
-      th[colspan="3"]
+      th Current station
+      th Route
+      th[colspan="1"]
   tbody
     - @trains.each do |train|
-      tr
-        td
-          = train.number
-        td
-          = link_to 'Show', train
-        td
-          = link_to 'Edit', edit_train_path(train)
-        td
-          = link_to 'Destroy', train, method: :delete, data: { confirm: 'Are you sure?' }
+      = render train
 br
 = link_to 'New Train', new_train_path

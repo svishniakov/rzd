@@ -22,3 +22,6 @@ Style/ClassVars:
 
 Style/StringLiterals:
   Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded

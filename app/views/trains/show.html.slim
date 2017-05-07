@@ -8,7 +8,7 @@ p
   =< @train.current_station.name
 p
   b Route:
-  - if @train.route.present?
+  - if @train.route.nil?
     |  Not assigned to route
   - else
     =< @train.route.title

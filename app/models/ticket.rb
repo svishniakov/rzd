@@ -1,16 +1,10 @@
 class Ticket < ApplicationRecord
-  validates :number, presence: true, uniqueness: true
-  # validates :train, presence: true
-  # validates :user, presence: true
-
   belongs_to :user
   belongs_to :train
+  belongs_to :start_station, class_name: 'RailwayStation', foreign_key: :start_station_id
+  belongs_to :end_station, class_name: 'RailwayStation', foreign_key: :end_station_id
 
-  def route_start_station
-    train.route.railway_stations.name
-  end
-
-  def route_finish_station
-    train.route.railway_stations.name
-  end
+  validates :number, presence: true, uniqueness: true
+  validates :train, presence: true
+  validates :user, presence: true
 end

@@ -1,0 +1,6 @@
+= form_for (carriage) do |f|
+  = render 'common/errors', resource: @carriage
+  .field
+    = f.label :number
+    = f.text_field :number
+  .actions = f.submit

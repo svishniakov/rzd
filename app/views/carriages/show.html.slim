@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Number:
+  =< @carriage.number
+
+= link_to 'Edit', edit_carriage_path(@carriage)
+'  |
+= link_to 'Back', carriages_path

@@ -3,4 +3,7 @@
   .field
     = f.label :number
     = f.text_field :number
+  .field
+    = f.label :carriage_type
+    = f.collection_select :carriage_type_id, CarriageType.order(:id), :id, :name, include_blank: false
   .actions = f.submit

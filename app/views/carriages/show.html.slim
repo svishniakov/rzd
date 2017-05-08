@@ -3,6 +3,9 @@ p#notice = notice
 p
   strong Number:
   =< @carriage.number
+p
+  strong Carriage class:
+  =< @carriage.carriage_type.name
 
 = link_to 'Edit', edit_carriage_path(@carriage)
 '  |

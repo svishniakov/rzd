@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  =< @carriage_type.name
+p
+  strong Seats:
+  =< @carriage_type.seats
+
+= link_to 'Edit', edit_carriage_type_path(@carriage_type)
+'  |
+= link_to 'Back', carriage_types_path

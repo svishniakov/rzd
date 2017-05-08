@@ -1,0 +1,11 @@
+tr
+  td
+    = carriage_type.name
+  td
+    = carriage_type.seats
+  td
+    = link_to 'Show', carriage_type
+  td
+    = link_to 'Edit', edit_carriage_type_path(carriage_type)
+  td
+    = link_to 'Destroy', carriage_type, data: {confirm: 'Are you sure?'}, method: :delete

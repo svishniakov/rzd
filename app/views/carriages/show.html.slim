@@ -6,7 +6,10 @@ p
 p
   strong Carriage class:
   =< @carriage.carriage_type.name
-
+p
+  strong Train number:
+  =< @carriage.train.number
+  
 = link_to 'Edit', edit_carriage_path(@carriage)
 '  |
 = link_to 'Back', carriages_path

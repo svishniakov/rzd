@@ -4,8 +4,14 @@ p
   strong Name:
   =< @carriage_type.name
 p
-  strong Seats:
-  =< @carriage_type.seats
+  strong Top seats:
+  =< @carriage_type.top_seats
+p
+  strong Bottom seats:
+  =< @carriage_type.bottom_seats
+p
+  strong Total seats:
+  =< @carriage_type.total_seats
 
 = link_to 'Edit', edit_carriage_type_path(@carriage_type)
 '  |

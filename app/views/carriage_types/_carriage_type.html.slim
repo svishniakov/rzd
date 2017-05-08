@@ -1,6 +1,8 @@
 tr
   td = carriage_type.name
-  td = carriage_type.seats
+  td = carriage_type.top_seats
+  td = carriage_type.bottom_seats
+  td = carriage_type.total_seats
   td = link_to 'Show', carriage_type
   td = link_to 'Edit', edit_carriage_type_path(carriage_type)
   td = link_to 'Destroy', carriage_type, data: {confirm: 'Are you sure?'}, method: :delete

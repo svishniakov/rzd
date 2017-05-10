@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :carriages
+  resources :carriage_types
   resources :trains
   resources :railway_stations
   resources :routes

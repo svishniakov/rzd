@@ -1,5 +1,5 @@
 class RailwayStationsController < ApplicationController
-  before_action :set_railway_station, only: [:show, :edit, :update, :destroy]
+  before_action :set_railway_station, only: %i[show edit update destroy]
 
   def index
     @railway_stations = RailwayStation.all

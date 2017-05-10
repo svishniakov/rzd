@@ -1,0 +1,15 @@
+p#notice
+  = notice
+h1 All Carriages
+table
+  thead
+    tr
+      th Number
+      th Carriage type
+      th Train
+      th[colspan="3"] Actions
+  tbody
+    = render @carriages
+br
+
+= link_to 'New Carriage', new_carriage_path

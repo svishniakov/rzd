@@ -12,6 +12,17 @@ p
     |  Not assigned to route
   - else
     =< @train.route.title
+p
+  b Attached carriages:
+  - if @train.carriages.empty?
+    | No carriages attached
+  - else
+  - @train.carriages.group(:carriage_type_id).count.each do |key, value|
+    - carriage_type = CarriageType.find(key)
+    br
+    = "#{carriage_type.name}: #{value}"
+    br
+    = "Top seats: #{carriage_type.top_seats * value}, bottom seats: #{carriage_type.bottom_seats * value}"
 
 = link_to 'Edit', edit_train_path(@train)
 |  | 

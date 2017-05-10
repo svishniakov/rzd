@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  =< @carriage_type.name
+p
+  strong Top seats:
+  =< @carriage_type.top_seats
+p
+  strong Bottom seats:
+  =< @carriage_type.bottom_seats
+p
+  strong Total seats:
+  =< @carriage_type.total_seats
+
+= link_to 'Edit', edit_carriage_type_path(@carriage_type)
+'  |
+= link_to 'Back', carriage_types_path

@@ -1,0 +1,12 @@
+= form_for (carriage) do |f|
+  = render 'common/errors', resource: @carriage
+  .field
+    = f.label :number
+    = f.text_field :number
+  .field
+    = f.label :carriage_type
+    = f.collection_select :carriage_type_id, CarriageType.order(:id), :id, :name, include_blank: false
+    .field
+      = f.label :train
+      = f.collection_select :train_id, Train.order(:number), :id, :number, include_blank: false
+  .actions = f.submit

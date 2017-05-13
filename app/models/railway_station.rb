@@ -7,6 +7,14 @@ class RailwayStation < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
+  def attach_to_route(route)
+    if position_check(route).nil?
+      last_position = route.railway_stations_routes.maximum(:position)
+      last_position += 1
+      route.railway_stations_routes.create(railway_station: self, position: last_position)
+    end
+  end
+
   def position_check(route)
     station_route(route).try(:position)
   end

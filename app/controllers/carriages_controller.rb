@@ -18,7 +18,7 @@ class CarriagesController < ApplicationController
   def create
     @carriage = Carriage.new(carriage_params)
     if @carriage.save
-      redirect_to @carriage, notice: 'Carriage was successfully created.'
+      redirect_to carriage_path(@carriage), notice: 'Carriage was successfully created.'
     else
       render :new
     end
@@ -26,7 +26,7 @@ class CarriagesController < ApplicationController
 
   def update
     if @carriage.update(carriage_params)
-      redirect_to @carriage, notice: 'Carriage was successfully updated.'
+      redirect_to carriage_path(@carriage ), notice: 'Carriage was successfully updated.'
     else
       render :edit
     end
@@ -44,6 +44,7 @@ class CarriagesController < ApplicationController
   end
 
   def carriage_params
-    params.require(:carriage).permit(:number, :train_id)
+    params.require(:carriage).permit(:number, :train_id, :type, :top_seats, :bottom_seats,\
+                                     :side_top_seats, :side_bottom_seats, :sitting_seats)
   end
 end

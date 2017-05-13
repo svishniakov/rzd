@@ -11,10 +11,9 @@ table
   tbody
     - @carriages.each do |carriage|
       tr
-        td = carriage.id
+        td = carriage.number
         td = carriage.model_name.human
         td = carriage.train.number
-        td = carriage.number
         td = link_to 'Show', carriage_path(carriage)
         td = link_to 'Edit', edit_carriage_path(carriage)
         td = link_to 'Destroy', carriage_path(carriage), data: {confirm: 'Are you sure?'}, method: :delete

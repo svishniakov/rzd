@@ -3,11 +3,19 @@ class Carriage < ApplicationRecord
 
   validates :number, presence: true
   validates :number, uniqueness: { scope: :train_id }
-  before_validation :carriage_number
+  before_validation :set_number
 
   protected
 
-  def carriage_number
-    train.carriages.empty? ? self.number = 1 : self.number = train.carriages.maximum(:number) + 1
+  def set_number
+    train.carriages.empty? ? set_first : set_next
+  end
+
+  def set_first
+    self.number = 1
+  end
+
+  def set_next
+    self.number = train.carriages.maximum(:number) + 1 if number.blank?
   end
 end

@@ -12,7 +12,7 @@ br
 br
   strong Available seats:
   br
-    = render @carriage.type.to_s.underscore, carriage: @carriage
+    = render @carriage.type.underscore
 
 = link_to 'Edit', edit_carriage_path(@carriage)
 '  |

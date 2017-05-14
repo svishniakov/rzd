@@ -4,10 +4,13 @@
     = f.label :number
     = f.text_field :number
   .field
+    = f.label :carriages_sorting, 'Carriages reverse sorting?'
+    = f.check_box :carriages_sorting
+  .field
     = f.label :current_station
-    = f.collection_select :current_station_id, RailwayStation.order(:name), :id, :name, include_blank: false
+    = f.collection_select :current_station_id, RailwayStation.order(:name), :id, :name
   .field
     = f.label :route
-    = f.collection_select :route_id, Route.order(:title), :id, :title, include_blank: false
+    = f.collection_select :route_id, Route.order(:title), :id, :title
   .actions
     = f.submit

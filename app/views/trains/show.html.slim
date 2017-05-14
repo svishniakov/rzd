@@ -20,9 +20,14 @@ p
   - if @train.carriages.empty?
     | No carriages attached
   - else
-  - @train.carriages.each do |carriage|
-    br
-    = link_to "##{carriage.number}", carriage_path(carriage)
+  - if @train.carriages_sorting == true
+    - @train.carriages.order(number: :desc).each do |carriage|
+      br
+      = link_to "##{carriage.number}", carriage_path(carriage)
+  - else
+    - @train.carriages.order(number: :asc).each do |carriage|
+      br
+      = link_to "##{carriage.number}", carriage_path(carriage)
 
 = link_to 'Edit', edit_train_path(@train)
 |  | 

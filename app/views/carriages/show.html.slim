@@ -12,14 +12,7 @@ br
 br
   strong Available seats:
   br
-  - @carriage.attribute_names.each do |name|
-    - if name.humanize.include? 'seats'
-      - seats = @carriage.send(name)
-    - unless seats.blank?
-      => name.humanize
-      ' -
-      =< @carriage.send(name)
-      br
+    = render @carriage.type.to_s.underscore, carriage: @carriage
 
 = link_to 'Edit', edit_carriage_path(@carriage)
 '  |

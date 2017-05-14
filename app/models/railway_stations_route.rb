@@ -4,5 +4,5 @@ class RailwayStationsRoute < ApplicationRecord
 
   validates :railway_station_id, uniqueness: { scope: :route_id }
 
-  default_scope { order(route_id: :asc, position: :asc) }
+  scope :ordered, -> { order(route_id: :asc, position: :asc) }
 end

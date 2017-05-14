@@ -5,4 +5,9 @@ class Train < ApplicationRecord
   has_many :carriages
 
   validates :number, presence: true, uniqueness: true
+
+  def seats_info(carriage_type, seats)
+    seats_param = seats.to_sym
+    carriages.where(type: carriage_type).sum(seats_param)
+  end
 end

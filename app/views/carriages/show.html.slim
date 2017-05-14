@@ -1,15 +1,26 @@
 p#notice = notice
 
-p
-  strong Number:
-  =< @carriage.number
-p
-  strong Carriage class:
-  =< @carriage.model_name.human
-p
+br
   strong Train number:
   =< @carriage.train.number
-  
+br
+  strong Carriage class:
+  =< @carriage.model_name.human
+br
+  strong Carriage number:
+  =< @carriage.number
+br
+  strong Available seats:
+  br
+  - @carriage.attribute_names.each do |name|
+    - if name.humanize.include? 'seats'
+      - seats = @carriage.send(name)
+    - unless seats.blank?
+      => name.humanize
+      ' -
+      =< @carriage.send(name)
+      br
+
 = link_to 'Edit', edit_carriage_path(@carriage)
 '  |
 = link_to 'Back', carriages_path

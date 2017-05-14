@@ -20,9 +20,9 @@ p
   - if @train.carriages.empty?
     | No carriages attached
   - else
-  - @train.carriages.group(:type).count.each do |key, value|
+  - @train.carriages.each do |carriage|
     br
-    = "#{key.constantize.model_name.human}: #{value}"
+    = link_to "##{carriage.number}", carriage_path(carriage)
 
 = link_to 'Edit', edit_train_path(@train)
 |  | 

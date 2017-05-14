@@ -7,6 +7,8 @@ class RailwayStation < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
+  private
+
   def attach_to_route(route)
     if position_check(route).nil?
       last_position = route.railway_stations_routes.maximum(:position)
@@ -23,8 +25,6 @@ class RailwayStation < ApplicationRecord
     station_route = station_route(route)
     station_route.update(position: position) if station_route
   end
-
-  protected
 
   def station_route(route)
     @station_route ||= railway_stations_routes.where(route: route).first

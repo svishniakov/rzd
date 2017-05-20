@@ -1,5 +1,19 @@
-- route.railway_stations_routes.ordered.each do |station|
-    br
-    => station.position
-    | Position -
-    =< station.railway_station.name
+table
+  thead
+    tr
+      td Name
+      td Position
+  tbody
+    - @route.railway_stations.ordered.each do |station|
+      tr
+        td = station.name
+        td =
+        td
+          = form_tag update_position_railway_station_path(station), method: :patch do
+            .field
+              = number_field_tag :position, station.position_in(@route)
+              = hidden_field_tag :route_id, @route.id
+              = submit_tag 'Change position'
+
+
+    

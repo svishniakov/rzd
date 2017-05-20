@@ -7,6 +7,17 @@ class RailwayStation < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
+  scope :ordered, -> { joins(:railway_stations_routes).order('railway_stations_routes.position').uniq }
+
+  def update_position(route, position)
+    station_route = station_route(route)
+    station_route.update(position: position) if route
+  end
+
+  def position_in(route)
+    station_route(route).try(:position)
+  end
+
   private
 
   def attach_to_route(route)
@@ -15,15 +26,6 @@ class RailwayStation < ApplicationRecord
       last_position += 1
       route.railway_stations_routes.create(railway_station: self, position: last_position)
     end
-  end
-
-  def position_check(route)
-    station_route(route).try(:position)
-  end
-
-  def position_update(route, position)
-    station_route = station_route(route)
-    station_route.update(position: position) if station_route
   end
 
   def station_route(route)

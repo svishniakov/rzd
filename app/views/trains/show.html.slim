@@ -20,10 +20,12 @@ p
   - if @train.carriages.empty?
     | No carriages attached
   - else
-  - attached_carriages = @train.sort_from_head? ? @train.carriages.sorted_desc : @train.carriages.sorted_asc
-  - attached_carriages.each do |carriage|
-    br
-    = link_to "##{carriage.number}", carriage_path(carriage)
+  ul
+  - @train.carriages.each do |carriage|
+    li = link_to "##{carriage.number}", carriage.becomes(Carriage)
+  br
+
+  = link_to 'Add carriage', new_train_carriage_path(@train)
 
 = link_to 'Edit', edit_train_path(@train)
 |  | 

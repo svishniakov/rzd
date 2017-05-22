@@ -8,11 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :routes
-
-  resource :search, only: %i[new show edit]
+  resource :search, only: %i[show create]
 
   get 'welcome/index'
-
   root 'welcome#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

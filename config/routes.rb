@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :routes
+  resources :tickets
   resource :search, only: %i[show create]
 
   get 'welcome/index'

@@ -28,3 +28,4 @@ p
             td = train.route.title
             td = train.route.start_time
             td = train.route.end_time
+            td = link_to 'Buy ticket', new_ticket_path(train_id: train.id, start_station_id: @start_station, end_station_id: @end_station)

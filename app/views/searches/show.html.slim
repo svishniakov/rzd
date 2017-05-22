@@ -19,8 +19,12 @@ p
         tr
           td Train number
           td Route title
+          td Departure time
+          td Arrival time
       tbody
       - @trains.each do |train|
           tr
             td = train.number
             td = train.route.title
+            td = train.route.start_time
+            td = train.route.end_time

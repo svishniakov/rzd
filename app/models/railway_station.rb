@@ -7,15 +7,25 @@ class RailwayStation < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  scope :ordered, -> { joins(:railway_stations_routes).order('railway_stations_routes.position').uniq }
+  scope :ordered, -> { joins(:railway_stations_routes).order('railway_stations_routes.position').distinct }
 
-  def update_position(route, position)
+  def update_position(route, position, arrival_time, departure_time)
     station_route = station_route(route)
-    station_route.update(position: position) if route
+    station_route.update(position: position, arrival_time: arrival_time, departure_time: departure_time) if route
   end
 
   def position_in(route)
     station_route(route).try(:position)
+  end
+
+  def arrival_time_in(route)
+    arrival_time = station_route(route).try(:arrival_time)
+    arrival_time.strftime('%H:%M') unless arrival_time.nil?
+  end
+
+  def departure_time_in(route)
+    departure_time = station_route(route).try(:departure_time)
+    departure_time.strftime('%H:%M') unless departure_time.nil?
   end
 
   private

@@ -1,0 +1,31 @@
+h1 Find train
+
+p
+  = form_tag search_path do
+    .field
+      = label :start_station_id, 'From station'
+      = collection_select :stations, :start_station_id, RailwayStation.all, :id, :name, prompt: true, required: true
+    .field
+      = label :end_station_id, 'To station'
+      = collection_select :stations, :end_station_id, RailwayStation.all, :id, :name, prompt: true, required: true
+    br
+      = submit_tag
+
+- if @trains.blank?
+    ' No routes found
+- else
+    table
+      thead
+        tr
+          td Train number
+          td Route title
+          td Departure time
+          td Arrival time
+      tbody
+      - @trains.each do |train|
+          tr
+            td = train.number
+            td = train.route.title
+            td = train.route.start_time
+            td = train.route.end_time
+            td = link_to 'Buy ticket', new_ticket_path(train_id: train.id, start_station_id: @start_station, end_station_id: @end_station)

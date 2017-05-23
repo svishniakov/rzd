@@ -11,7 +11,7 @@ class Carriage < ApplicationRecord
   protected
 
   def set_number
-    train.carriages.empty? ? set_first : set_next
+    !train.carriages.exists? ? set_first : set_next
   end
 
   def set_first
@@ -19,6 +19,6 @@ class Carriage < ApplicationRecord
   end
 
   def set_next
-    self.number = train.carriages.maximum(:number) + 1 if number.blank?
+    self.number = train.carriages.maximum(:number) + 1
   end
 end

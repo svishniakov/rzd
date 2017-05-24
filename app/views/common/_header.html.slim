@@ -5,6 +5,8 @@ br
     ' Hello
     =< current_user.name
     ' !
+    =< link_to 'Dashboard', admin_dashboard_path if current_user.admin?
+    br
     =< link_to 'Sign out', destroy_user_session_path, method: :delete
   - else
     = link_to 'Sign in', new_user_session_path

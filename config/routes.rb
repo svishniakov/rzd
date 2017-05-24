@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       patch :update_time, on: :member
     end
 
+    resource :dashboard
+
+    resources :tickets
     resources :routes
   end
 

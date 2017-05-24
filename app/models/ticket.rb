@@ -12,6 +12,6 @@ class Ticket < ApplicationRecord
   private
 
   def set_number
-    self.number ||= 10.times.map { [*'0'..'9', *'A'..'Z'].sample }.join
+    self.number ||= [*'0'..'9', *'A'..'Z'].sample(10).join
   end
 end

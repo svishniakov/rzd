@@ -25,12 +25,12 @@ class TicketsController < ApplicationController
   end
 
   def update
-      if @ticket.update(ticket_params)
-        redirect_to @ticket, notice: 'Ticket was successfully updated.'
-      else
-        render :edit
-      end
+    if @ticket.update(ticket_params)
+      redirect_to @ticket, notice: 'Ticket was successfully updated.'
+    else
+      render :edit
     end
+  end
 
   def destroy
     @ticket.destroy

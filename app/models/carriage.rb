@@ -3,10 +3,9 @@ class Carriage < ApplicationRecord
 
   validates :number, presence: true
   validates :number, uniqueness: { scope: :train_id }
-  before_create :set_number
+  before_validation :set_number, on: :create
 
-  scope :sorted_desc, -> { order(number: :desc) }
-  scope :sorted_asc, -> { order(number: :asc) }
+  scope :sorted, -> (sort_from_head) { sort_from_head ? order(number: :desc) : order(number: :asc) }
 
   protected
 

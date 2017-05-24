@@ -1,0 +1,7 @@
+= form_for [:admin, railway_station] do |f|
+  = render 'common/errors', resource: @railway_station
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit

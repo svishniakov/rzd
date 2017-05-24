@@ -1,0 +1,20 @@
+h1 All Carriages
+table
+  thead
+    tr
+      th Number
+      th Class
+      th Train
+      th[colspan="3"] Actions
+  tbody
+    - @carriages.each do |carriage|
+      tr
+        td = carriage.number
+        td = carriage.model_name.human
+        td = carriage.train.number
+        td = link_to 'Show', admin_carriage_path(carriage)
+        td = link_to 'Edit', edit_admin_carriage_path(carriage)
+        td = link_to 'Destroy', admin_carriage_path(carriage), data: {confirm: 'Are you sure?'}, method: :delete
+br
+
+= link_to 'New Carriage', new_admin_train_carriage_path

@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Rzd - Administration
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  container
+    header
+      = render 'common/header'
+    body
+      = render 'common/alerts'
+      = yield
+    footer
+      = render 'common/footer'

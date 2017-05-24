@@ -1,5 +1,4 @@
 class Admin::RailwayStationsController < Admin::BaseController
-  before_action :authenticate_user!
   before_action :set_railway_station, except: %i[index new create]
   before_action :set_route, only: %i[update_position update_time]
 

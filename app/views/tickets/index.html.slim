@@ -20,7 +20,7 @@ table
         td = ticket.train.number
         td = ticket.start_station.name
         td = ticket.end_station.name
-        td = link_to 'Edit', edit_ticket_path(ticket)
+        td = link_to 'Show', ticket_path(ticket)
         td = link_to 'Destroy', ticket, data: { confirm: 'Are you sure?' }, method: :delete
 
 br

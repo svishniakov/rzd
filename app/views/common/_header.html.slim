@@ -2,8 +2,9 @@ h1
   = link_to 'Thinknetica Railway', root_path
 br
   - if user_signed_in?
-    ' Logged in as:
-    =< current_user.email
+    ' Hello
+    =< current_user.name
+    ' !
     =< link_to 'Sign out', destroy_user_session_path, method: :delete
   - else
     = link_to 'Sign in', new_user_session_path

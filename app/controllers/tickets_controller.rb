@@ -1,34 +1,25 @@
 class TicketsController < ApplicationController
-  before_action :set_ticket, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+  before_action :set_ticket, only: %i[show edit destroy]
+
 
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets.all
   end
 
   def show
   end
 
   def new
-    @ticket = Ticket.new
-  end
-
-  def edit
+    @ticket = current_user.tickets.new
   end
 
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = current_user.tickets.new(ticket_params)
     if @ticket.save
       redirect_to @ticket, notice: 'Ticket was successfully created.'
     else
       render :new
-    end
-  end
-
-  def update
-    if @ticket.update(ticket_params)
-      redirect_to @ticket, notice: 'Ticket was successfully updated.'
-    else
-      render :edit
     end
   end
 
@@ -38,6 +29,7 @@ class TicketsController < ApplicationController
   end
 
   private
+
   def set_ticket
     @ticket = Ticket.find(params[:id])
   end

@@ -1,5 +1,4 @@
 h1 Find train
-
 p
   = form_tag search_path do
     .field
@@ -17,15 +16,18 @@ p
     table
       thead
         tr
-          td Train number
-          td Route title
-          td Departure time
-          td Arrival time
+          th Train number
+          th Route title
+          th Departure time
+          th Arrival time
       tbody
       - @trains.each do |train|
-          tr
-            td = train.number
-            td = train.route.title
-            td = train.route.start_time
-            td = train.route.end_time
+        tr
+          td = train.number
+          td = train.route.title
+          td = train.route.start_time
+          td = train.route.end_time
+        - if user_signed_in?
             td = link_to 'Buy ticket', new_ticket_path(train_id: train.id, start_station_id: @start_station, end_station_id: @end_station)
+        - else
+            td Please sign-in

@@ -1,0 +1,7 @@
+= form_for [:admin, route] do |f|
+  = render 'common/errors', resource: @route
+  .field
+    = f.label :railway_station_ids
+    = f.collection_select :railway_station_ids, RailwayStation.order(:name), :id, :name, {}, {multiple: true}
+  .actions
+    = f.submit

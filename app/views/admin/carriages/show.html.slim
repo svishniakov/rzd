@@ -1,0 +1,17 @@
+br
+  strong Train number:
+  =< @carriage.train.number
+br
+  strong Carriage class:
+  =< @carriage.model_name.human
+br
+  strong Carriage number:
+  =< @carriage.number
+br
+  strong Available seats:
+  br
+    = render @carriage.type.underscore
+
+= link_to 'Edit', edit_admin_carriage_path(@carriage)
+'  |
+= link_to 'Back', admin_train_path(@carriage.train)

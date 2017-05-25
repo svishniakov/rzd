@@ -15,6 +15,7 @@ gem 'slim-rails'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -26,4 +27,5 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker'
+  gem 'letter_opener'
 end

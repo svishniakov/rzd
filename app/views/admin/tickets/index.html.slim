@@ -1,0 +1,31 @@
+h2 All tickets
+
+table
+  thead
+    tr
+      th Registered user
+      th Number
+      th Passenger
+      th Passport
+      th Train number
+      th Start station
+      th End station
+      th[colspan="2"] Actions
+
+  tbody
+    - @tickets.each do |ticket|
+      tr
+        td = ticket.user.name
+        td = ticket.number
+        td = ticket.passenger
+        td = ticket.passport
+        td = ticket.train.number
+        td = ticket.start_station.name
+        td = ticket.end_station.name
+        td = link_to 'Show', admin_ticket_path(ticket)
+        td = link_to 'Edit', edit_admin_ticket_path(ticket)
+        td = link_to 'Destroy', admin_ticket_path(ticket), data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Ticket', new_admin_ticket_path

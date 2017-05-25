@@ -1,0 +1,11 @@
+tr
+  td = train.number
+  td = train.current_station.name unless train.current_station.nil?
+  td
+    - if train.route.nil?
+      |  Not assigned to route
+    - else
+      = train.route.title
+  td = link_to 'Show', admin_train_path(train)
+  td = link_to 'Edit', edit_admin_train_path(train)
+  td = link_to 'Destroy', admin_train_path(train), method: :delete, data: { confirm: 'Are you sure?' }

@@ -14,9 +14,6 @@ class TicketsController < ApplicationController
     @ticket = current_user.tickets.new
   end
 
-  def edit
-  end
-
   def create
     @ticket = current_user.tickets.new(ticket_params)
     if @ticket.save
@@ -38,7 +35,7 @@ class TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:user_id, :number, :passenger, :passport, :train_id, :start_station_id, :end_station_id)
+    params.require(:ticket).permit(:number, :passenger, :passport, :train_id, :start_station_id, :end_station_id)
   end
 
 end

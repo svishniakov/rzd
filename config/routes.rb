@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :tickets
+  resources :tickets, except: %i[edit update]
   resource :search, only: %i[show create]
 
   namespace :admin do

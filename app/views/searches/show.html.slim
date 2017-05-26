@@ -1,25 +1,26 @@
-h1 Find train
+h1
+  = t('.search')
 p
   = form_tag search_path do
     .field
-      = label :start_station_id, 'From station'
-      = collection_select :stations, :start_station_id, RailwayStation.all, :id, :name, prompt: true, required: true
+      = label :start_station_id, t('.start_station')
+      = collection_select :stations, :start_station_id, RailwayStation.all, :id, :name, prompt: t('.prompt'), required: true
     .field
-      = label :end_station_id, 'To station'
-      = collection_select :stations, :end_station_id, RailwayStation.all, :id, :name, prompt: true, required: true
+      = label :end_station_id, t('.end_station')
+      = collection_select :stations, :end_station_id, RailwayStation.all, :id, :name, prompt: t('.prompt'), required: true
     br
-      = submit_tag
+      = submit_tag t('.search')
 
 - if @trains.blank?
-    ' No routes found
+    = t('.no_routes_found')
 - else
     table
       thead
         tr
-          th Train number
-          th Route title
-          th Departure time
-          th Arrival time
+          th = t('common.train_number')
+          th = t('common.route_title')
+          th = t('common.departure_time')
+          th = t('common.arrival_time')
       tbody
       - @trains.each do |train|
         tr
@@ -28,6 +29,6 @@ p
           td = train.route.start_time
           td = train.route.end_time
         - if user_signed_in?
-            td = link_to 'Buy ticket', new_ticket_path(train_id: train.id, start_station_id: @start_station, end_station_id: @end_station)
+            td = link_to t('.buy_ticket'), new_ticket_path(train_id: train.id, start_station_id: @start_station, end_station_id: @end_station)
         - else
-            td Please sign-in
+            td = link_to t('common.sign_in'), new_user_session_path

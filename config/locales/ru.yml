@@ -1,0 +1,37 @@
+ru:
+  common:
+    back: "Назад"
+    edit: "Изменить"
+    train_number: "Номер поезда"
+    route_title: "Название маршрута"
+    departure_time: "Время отправления"
+    arrival_time: "Время прибытия"
+    dashboard: "Админка"
+    search: "Поиск билетов"
+    my_tickets: "Мои билеты"
+  searches:
+    show:
+      start_station: "От станции"
+      end_station: "До станции"
+      prompt: "выберите станцию"
+      search: "Искать"
+      no_routes_found: "Не найдено маршрутов"
+      buy_ticket: "Купить билет"
+  admin:
+    trains:
+      new:
+        title: "Новый поезд"
+      form:
+        submit: "Добавить поезд"
+    railway_stations:
+      new:
+        title: "Новая станция"
+    routes:
+      new:
+        title: "Новый маршрут"
+    tickets:
+      new:
+        title: "Новый билет"
+    carriages:
+      new:
+        title: "Новый вагон"

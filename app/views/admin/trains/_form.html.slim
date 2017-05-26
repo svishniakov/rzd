@@ -4,7 +4,7 @@
     = f.label :number
     = f.text_field :number
   .field
-    = f.label :sort_fro_head, 'Carriages reverse sorting?'
+    = f.label :sort_from_head
     = f.check_box :sort_from_head
   .field
     = f.label :current_station
@@ -13,4 +13,4 @@
     = f.label :route
     = f.collection_select :route_id, Route.order(:title), :id, :title
   .actions
-    = f.submit
+    = f.submit t('.submit')

@@ -49,10 +49,21 @@ ru:
       journey_data: "Маршрут"
   admin:
     trains:
+      index:
+        title: "Все поезда"
+        current_station: "Текушая станция"
       new:
         title: "Новый поезд"
       form:
         submit: "%{action} поезд"
+        route_prompt: "выберите маршрут"
+      edit:
+        title: "Изменение поезда"
+      show:
+        title: "Данные о поезде %{train}"
+        depot: "Находится в депо"
+        not_assigned: "Без марштура"
+        carriages: "Вагоны"
     railway_stations:
       new:
         title: "Новая станция"

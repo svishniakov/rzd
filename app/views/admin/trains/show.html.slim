@@ -1,30 +1,36 @@
-p
-  b Number:
-  =< @train.number
-p
-  b Current station:
-  - if @train.current_station.nil?
-    |  Located in depot
-  - else
-    =< @train.current_station.name
-p
-  b Route:
-  - if @train.route.nil?
-    |  Not assigned to route
-  - else
-    =< @train.route.title
-p
-  b Attached carriages:
-  ul
-  - if @train.carriages.empty?
-    | No carriages attached
-  - else
-    - @train.sorted_carriages.each do |carriage|
-      li = link_to "##{carriage.number}", [:admin, carriage.becomes(Carriage)]
-br
+.container
+  .card
+    .card-header
+      h3 = t('.title', train: @train.number)
+    .card-text
+      p
+        ul
+          li
+            = t('admin.trains.index.current_station')
+            ' :
+            - if @train.current_station.nil?
+              = t('.depot')
+            - else
+              =< @train.current_station.name
+          li
+            = t('common.route_title')
+            ' :
+            - if @train.route.nil?
+              = t('.not_assigned')
+            - else
+              =< @train.route.title
+        ul
+          = t('.carriages')
+          ' :
+          - if @train.carriages.empty?
+            = t('.carriages')
+          - else
+            - @train.sorted_carriages.each do |carriage|
+              li = link_to "##{carriage.number}", [:admin, carriage.becomes(Carriage)]
+        br
 
-  = link_to 'Add carriage', new_admin_train_carriage_path(@train)
-
-= link_to 'Edit', edit_admin_train_path(@train)
-|  | 
-= link_to t('common.back'), admin_trains_path
+  =<> link_to t('common.new'), new_admin_train_carriage_path(@train)
+  | |
+  =<> link_to t('common.edit'), edit_admin_train_path(@train)
+  | |
+  =<> link_to t('common.back'), admin_trains_path

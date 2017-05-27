@@ -1,4 +1,6 @@
-p.notice
-  = notice
-p.alert
-  = alert
+- flash.each do |key, value|
+  div class="alert alert-#{key} alert-dismissible"
+    button.close[type="button" data-dismiss="alert" aria-label="Close"]
+      span[aria-hidden="true"]
+        | ×
+    = value

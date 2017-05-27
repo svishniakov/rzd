@@ -1,7 +1,11 @@
 ru:
   common:
+    new: "Создать"
     back: "Назад"
     edit: "Изменить"
+    show: "Просмотр"
+    destroy: "Удалить"
+    are_you_sure: "Вы уверены?"
     train_number: "Номер поезда"
     route_title: "Название маршрута"
     departure_time: "Время отправления"
@@ -9,6 +13,11 @@ ru:
     dashboard: "Админка"
     search: "Поиск билетов"
     my_tickets: "Мои билеты"
+    errors: "При заполнении формы возникли ошибки"
+  welcome:
+    index:
+      welcome: "Добро пожаловать в Thinknetica railway"
+      lead: "Лучшее место для поиска выгодных предложений для ваших будущих путешествий"
   searches:
     show:
       start_station: "От станции"
@@ -30,8 +39,20 @@ ru:
       new:
         title: "Новый маршрут"
     tickets:
+      index:
+        title: "Все билеты"
+        user: "Пользователь"
+        ticket_number: "Номер билета"
+        passenger: "Пассажир"
+        passport: "Паспорт"
+        train_number: "Номер поезда"
+        start_station: "Начало маршрута"
+        end_station: "Конец машрута"
       new:
         title: "Новый билет"
     carriages:
       new:
         title: "Новый вагон"
+    dashboards:
+      show:
+        admin: "Администрирование системы"

@@ -1,8 +1,9 @@
-p
-  = link_to 'Registered tickets', admin_tickets_path
-p
-  = link_to 'Stations', admin_railway_stations_path
-p
-  = link_to 'Trains', admin_trains_path
-p
-  = link_to 'Routes', admin_routes_path
+.jumbotron.text-center
+  .container-fluid
+    h1.jumbotron-heading
+      = t('.admin')
+    p.btn-group
+      = link_to 'Registered tickets', admin_tickets_path, class: 'btn btn-primary'
+      = link_to 'Stations', admin_railway_stations_path, class: 'btn btn-info'
+      = link_to 'Trains', admin_trains_path, class: 'btn btn-warning'
+      = link_to 'Routes', admin_routes_path, class: 'btn btn-success'

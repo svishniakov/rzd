@@ -1,12 +1,16 @@
-h1
-  = link_to 'Thinknetica Railway', root_path
-br
-  - if user_signed_in?
-    ' Hello
-    =< current_user.name
-    ' !
-    =< link_to t('common.dashboard'), admin_dashboard_path if current_user.admin?
-    br
-    =< link_to t('common.sign_out'), destroy_user_session_path, method: :delete
-  - else
-    = link_to t('common.sign_in'), new_user_session_path
+nav.navbar.navbar-toggleable-md.navbar-inverse.bg-inverse.topbar_shadow
+  button.navbar-toggler.navbar-toggler-right[type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation']
+    span.navbar-toggler-icon
+  = link_to 'Thinknetica railway', root_path, class: 'navbar-brand'
+  #navbarCollapse.collapse.navbar-collapse
+    ul.nav.navbar-nav.mr-auto
+      li.nav-item
+      - if user_signed_in? && current_user.admin?
+        = link_to t('common.dashboard'), admin_dashboard_path, class: 'nav-link'
+    ul.nav.navbar-nav
+      - if user_signed_in?
+        li.nav-item.dropdown
+          a#dropdown.nav-link.dropdown-toggle[data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
+            = current_user.name
+          .dropdown-menu[aria-labelledby="dropdown"]
+            = link_to t('devise.common.sign_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item'

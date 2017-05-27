@@ -16,6 +16,12 @@ gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'therubyracer'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 group :development, :test do
   gem 'byebug', platform: :mri

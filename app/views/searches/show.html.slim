@@ -2,14 +2,14 @@ h1
   = t('.search')
 p
   = form_tag search_path do
-    .field
+    .form-group
       = label :start_station_id, t('.start_station')
-      = collection_select :stations, :start_station_id, RailwayStation.all, :id, :name, prompt: t('.prompt'), required: true
-    .field
+      = collection_select :stations, :start_station_id, RailwayStation.all, :id, :name, {prompt: t('.prompt')}, {class: 'custom-select'}
+    .form-group
       = label :end_station_id, t('.end_station')
-      = collection_select :stations, :end_station_id, RailwayStation.all, :id, :name, prompt: t('.prompt'), required: true
+      = collection_select :stations, :end_station_id, RailwayStation.all, :id, :name, {prompt: t('.prompt')}, {class: 'custom-select'}
     br
-      = submit_tag t('.search')
+      = submit_tag t('.search'), class: 'btn btn-primary'
 
 - if @trains.blank?
     = t('.no_routes_found')

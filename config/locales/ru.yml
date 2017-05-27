@@ -100,6 +100,23 @@ ru:
     carriages:
       new:
         title: "Новый вагон"
+      edit:
+        title: "Изменить вагон"
+      show:
+        title: "Данные о вагоне %{carriage_number} в поезде %{train_number}"
+        class: "Тип вагона"
+        seats: "Свободные места"
+      carriage:
+        top_seats: "Верхние места"
+        bottom_seats: "Нижние места"
+        side_top_seats: "Боковые верхние места"
+        side_bottom_seats: "Боковые нижние места"
+        sitting_seats: "Сидячие места"
+      form:
+        action: "%{action} вагон"
+        type_prompt: "выберите тип вагона"
+        train: "Номер поезда"
+        type: "Тип вагона"
     dashboards:
       show:
         admin: "Администрирование системы"

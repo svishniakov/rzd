@@ -1,25 +1,29 @@
-= form_for [:admin, @train, @carriage.becomes(Carriage)] do |f|
-  = render 'common/errors', resource: @carriage
-  .field
-    = f.label :train
-    = f.collection_select :train_id, Train.order(:number), :id, :number, include_blank: false
-  .field
-    = f.label :type
-    = f.select :type, ([['Saloon', SaloonCarriage.name], ['Economy', EconomyCarriage.name],\
-                        ['Sleeping', SleepingCarriage.name], ['Sitting', SittingCarriage.name]])
-  .field
-    = f.label :top_seats
-    = f.number_field :top_seats
-  .field
-    = f.label :bottom_seats
-    = f.number_field :bottom_seats
-  .field
-    = f.label :side_top_seats
-    = f.number_field :side_top_seats
-  .field
-    = f.label :side_bottom_seats
-    = f.number_field :side_bottom_seats
-  .field
-    = f.label :sitting_seats
-    = f.number_field :sitting_seats
-  .actions = f.submit
+.container
+  .form
+    = form_for [:admin, @train, @carriage.becomes(Carriage)] do |f|
+      = render 'common/errors', resource: @carriage
+      fieldset.form-group
+        = f.label t('.train')
+        = f.collection_select :train_id, Train.order(:number), :id, :number\
+                                        , {prompt: t('admin.tickets.form.train_prompt')}, {class: 'custom-select'}
+      fieldset.form-group
+        = f.label t('.type')
+        = f.select :type, ([['Saloon', SaloonCarriage.name], ['Economy', EconomyCarriage.name],\
+                            ['Sleeping', SleepingCarriage.name], ['Sitting', SittingCarriage.name]])\
+                            , {prompt: t('.type_prompt')}, {class: 'custom-select'}
+      fieldset.form-group
+        = f.label t('admin.carriages.carriage.top_seats')
+        = f.number_field :top_seats, class: 'form-control'
+      fieldset.form-group
+        = f.label t('admin.carriages.carriage.bottom_seats')
+        = f.number_field :bottom_seats, class: 'form-control'
+      fieldset.form-group
+        = f.label t('admin.carriages.carriage.side_top_seats')
+        = f.number_field :side_top_seats, class: 'form-control'
+      fieldset.form-group
+        = f.label t('admin.carriages.carriage.side_bottom_seats')
+        = f.number_field :side_bottom_seats, class: 'form-control'
+      fieldset.form-group
+        = f.label t('admin.carriages.carriage.sitting_seats')
+        = f.number_field :sitting_seats, class: 'form-control'
+      = f.submit t('.action', action: @carriage.new_record? ? t('common.new') : t('common.edit')), class: 'btn btn-primary btn-sm'

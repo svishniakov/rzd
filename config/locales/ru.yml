@@ -14,6 +14,10 @@ ru:
     search: "Поиск билетов"
     my_tickets: "Мои билеты"
     errors: "При заполнении формы возникли ошибки"
+  controllers:
+    created: "%{resource_name} был успешно создан"
+    updated: "%{resource_name} был успешно изменён"
+    destroyed: "%{resource_name} был удалён"
   welcome:
     index:
       welcome: "Добро пожаловать в Thinknetica railway"
@@ -52,6 +56,15 @@ ru:
     railway_stations:
       new:
         title: "Новая станция"
+      index:
+        title: "Все станции"
+        name: "Название станции"
+      show:
+        title: "Станция: %{railway_station}"
+      edit:
+        title: "Изменение станции"
+      form:
+        action: "%{action} станцию"
     routes:
       new:
         title: "Новый маршрут"
@@ -71,6 +84,8 @@ ru:
         title: "Изменить билет"
       form:
         action: "%{action} билет"
+        user_prompt: "выберите пользователя"
+        train_prompt: "выберите поезд"
     carriages:
       new:
         title: "Новый вагон"

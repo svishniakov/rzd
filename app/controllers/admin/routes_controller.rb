@@ -16,7 +16,7 @@ class Admin::RoutesController < Admin::BaseController
     @route = Route.new(route_params)
 
     if @route.save
-      redirect_to admin_route_path(@route)
+      redirect_to admin_route_path(@route), notice: I18n.t('controllers.created', resource_name: @route.model_name.human)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def update
     if @route.update(route_params)
-      redirect_to admin_route_path(@route)
+      redirect_to admin_route_path(@route), notice: I18n.t('controllers.updated', resource_name: @route.model_name.human)
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def destroy
     @route.destroy
-    redirect_to admin_routes_path
+    redirect_to admin_routes_path, notice: I18n.t('controllers.destroyed', resource_name: @route.model_name.human)
   end
 
   private

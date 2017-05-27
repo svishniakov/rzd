@@ -1,5 +1,10 @@
 .container
-  h1
-    = t('.title')
-  == render 'form', ticket: @ticket
-  = link_to t('common.back'), admin_tickets_path
+  .card
+    .card-header
+      h1
+        = t('.title')
+    .card-text
+      .card-block
+        = render 'form', ticket: @ticket
+    .card-footer
+      = link_to t('common.back'), admin_tickets_path

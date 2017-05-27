@@ -1,21 +1,27 @@
-p#notice
-  = notice
-p
-  b Name:
-  =< @route.title
-p
-  b Route stations:
-  - if @route.railway_stations.empty?
-    |  Route contains no stations
-  - else
-    = render 'admin/routes/route_stations'
-p
-  b Assigned trains:
-  - if @route.trains.empty?
-    |  There are no assigned trains to the route
-  - else
-    = render 'admin/routes/route_trains', route: @route
-
-= link_to 'Edit', edit_admin_route_path(@route)
-|  |
-= link_to 'Back', admin_routes_path
+.container
+  .card
+    .card-header
+      h2 = t('.title')
+    .card-text
+      .card-block
+        ul
+          li
+            = t('.name')
+            ' :
+            =< @route.title
+          li
+            = t('.route_stations')
+            - if @route.railway_stations.empty?
+              = t('.route_no_stations')
+            - else
+              = render 'admin/routes/route_stations'
+          li
+            = t('.assigned_trains')
+            - if @route.trains.empty?
+              = t('.route_no_trains')
+            - else
+              = render 'admin/routes/route_trains', route: @route
+    .card-footer
+      = link_to t('common.edit'), edit_admin_route_path(@route)
+      |  |
+      = link_to t('common.back'), admin_routes_path

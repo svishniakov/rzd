@@ -79,6 +79,24 @@ ru:
     routes:
       new:
         title: "Новый маршрут"
+      edit:
+        title: "Изменение маршрута"
+      form:
+        railway_stations: "Выберите станции"
+        action: "%{action} маршрут"
+      show:
+        title: "Просмотр и изменение маршрута"
+        name: "Название маршрута"
+        route_stations: "Описание маршрута"
+        route_no_stations: "В маршруте нет станций"
+        assigned_trains: "Поезда на маршруте"
+        route_no_trains: "На маршруте нет поездов"
+      route_stations:
+        name: "Название станции"
+        position: "Позиция в маршруте"
+        time: "Время прибытия и отправления"
+        change_position: "Изменить позицию"
+        change_time: "Изменить время"
     tickets:
       index:
         title: "Все билеты"

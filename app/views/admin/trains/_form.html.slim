@@ -4,10 +4,10 @@
       = render 'common/errors', resource: @train
       fieldset.form-group
         = f.label :number
-        = f.text_field :number
+        = f.text_field :number, class: 'form-control'
       fieldset.form-group
         = f.label :sort_from_head
-        = f.check_box :sort_from_head
+        = f.check_box :sort_from_head, class: 'form-control'
       fieldset.form-group
         = f.label :current_station
         = f.collection_select :current_station_id, RailwayStation.order(:name), :id, :name, {prompt: t('searches.show.prompt')}, {class: 'custom-select'}

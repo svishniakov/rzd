@@ -21,6 +21,7 @@ p
           th = t('common.route_title')
           th = t('common.departure_time')
           th = t('common.arrival_time')
+          th
       tbody
       - @trains.each do |train|
         tr
@@ -28,7 +29,7 @@ p
           td = train.route.title
           td = train.route.start_time
           td = train.route.end_time
-        - if user_signed_in?
-            td = link_to t('.buy_ticket'), new_ticket_path(train_id: train.id, start_station_id: @start_station, end_station_id: @end_station)
-        - else
-            td = link_to t('common.sign_in'), new_user_session_path
+          td
+            = render 'searches/buy_button', train: train if user_signed_in?
+            = render 'searches/login_button' if !user_signed_in?
+

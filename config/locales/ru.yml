@@ -25,13 +25,30 @@ ru:
       prompt: "выберите станцию"
       search: "Искать"
       no_routes_found: "Не найдено маршрутов"
+    buy_button:
       buy_ticket: "Купить билет"
+  tickets:
+    index:
+      title: "Мои билеты"
+      ticket_number: "Номер билета"
+      passenger: "Пассажир"
+      passport: "Паспорт"
+      train_number: "Номер поезда"
+      start_station: "Начало маршрута"
+      end_station: "Конец машрута"
+    new:
+      title: "Новый билет"
+    form:
+      action: "%{action} билет"
+    show:
+      title: "Данные билета - %{ticket_number}"
+      journey_data: "Маршрут"
   admin:
     trains:
       new:
         title: "Новый поезд"
       form:
-        submit: "Добавить поезд"
+        submit: "%{action} поезд"
     railway_stations:
       new:
         title: "Новая станция"
@@ -50,9 +67,17 @@ ru:
         end_station: "Конец машрута"
       new:
         title: "Новый билет"
+      edit:
+        title: "Изменить билет"
+      form:
+        action: "%{action} билет"
     carriages:
       new:
         title: "Новый вагон"
     dashboards:
       show:
         admin: "Администрирование системы"
+        all_tickets: "Зарегестрированные билеты"
+        stations: "Станции"
+        trains: "Поезда"
+        routes: "Маршруты"

@@ -13,4 +13,4 @@
     = f.label :route
     = f.collection_select :route_id, Route.order(:title), :id, :title
   .actions
-    = f.submit t('.submit')
+    = f.submit t('.submit', action: train.new_record? ? t('common.new') : t('common.edit'))

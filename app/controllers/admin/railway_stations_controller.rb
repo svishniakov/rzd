@@ -20,7 +20,7 @@ class Admin::RailwayStationsController < Admin::BaseController
     @railway_station = RailwayStation.new(railway_station_params)
 
     if @railway_station.save
-      redirect_to admin_railway_station_path(@railway_station), notice: I18n.t('controllers.created', resource_name: @railway_station.model_name.human)
+      redirect_to admin_railway_station_path(@railway_station), notice: t('controllers.created', resource_name: @railway_station.model_name.human)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::RailwayStationsController < Admin::BaseController
 
   def update
     if @railway_station.update(railway_station_params)
-      redirect_to admin_railway_stations_path, notice: I18n.t('controllers.updated', resource_name: @railway_station.model_name.human)
+      redirect_to admin_railway_stations_path, notice: t('controllers.updated', resource_name: @railway_station.model_name.human)
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class Admin::RailwayStationsController < Admin::BaseController
 
   def destroy
     @railway_station.destroy
-    redirect_to admin_railway_stations_url, notice: I18n.t('controllers.destroyed', resource_name: @railway_station.model_name.human)
+    redirect_to admin_railway_stations_url, notice: t('controllers.destroyed', resource_name: @railway_station.model_name.human)
   end
 
   private

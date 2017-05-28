@@ -17,7 +17,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = current_user.tickets.new(ticket_params)
     if @ticket.save
-      redirect_to @ticket, notice: I18n.t('controllers.created', resource_name: @ticket.model_name.human)
+      redirect_to @ticket, notice: t('controllers.created', resource_name: @ticket.model_name.human)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to tickets_url, notice: I18n.t('controllers.destroyed', resource_name: @ticket.model_name.human)
+    redirect_to tickets_url, notice: t('controllers.destroyed', resource_name: @ticket.model_name.human)
   end
 
   private

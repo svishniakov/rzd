@@ -64,6 +64,8 @@ ru:
         depot: "Находится в депо"
         not_assigned: "Без марштура"
         carriages: "Вагоны"
+        no_carriages: "У поезда нет вагонов"
+        add_carriages: "Добавить вагон"
     railway_stations:
       new:
         title: "Новая станция"

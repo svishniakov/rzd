@@ -23,13 +23,13 @@
           = t('.carriages')
           ' :
           - if @train.carriages.empty?
-            = t('.carriages')
+            = t('.no_carriages')
           - else
             - @train.sorted_carriages.each do |carriage|
               li = link_to "##{carriage.number}", [:admin, carriage.becomes(Carriage)]
         br
 
-  =<> link_to t('common.new'), new_admin_train_carriage_path(@train)
+  =<> link_to t('.add_carriages'), new_admin_train_carriage_path(@train)
   | |
   =<> link_to t('common.edit'), edit_admin_train_path(@train)
   | |

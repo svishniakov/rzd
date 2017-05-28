@@ -2,10 +2,7 @@
   .form
     = form_for [:admin, @train, @carriage.becomes(Carriage)] do |f|
       = render 'common/errors', resource: @carriage
-      fieldset.form-group
-        = f.label t('.train')
-        = f.collection_select :train_id, Train.order(:number), :id, :number\
-                                        , {prompt: t('admin.tickets.form.train_prompt')}, {class: 'custom-select'}
+        = f.hidden_field :train_id, @train.id
       fieldset.form-group
         = f.label t('.type')
         = f.select :type, ([['Saloon', SaloonCarriage.name], ['Economy', EconomyCarriage.name],\

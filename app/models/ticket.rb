@@ -8,8 +8,17 @@ class Ticket < ApplicationRecord
   validates :passenger, presence: true
 
   before_validation :set_number
+  after_create :send_notification
+
+  def route_name
+    "#{start_station.name} - #{end_station.name}"
+  end
 
   private
+
+  def send_notification
+    TicketsMailer.buy_ticket(self.user, self).deliver_now
+  end
 
   def set_number
     self.number ||= [*'0'..'9', *'A'..'Z'].sample(10).join

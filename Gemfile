@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -18,6 +19,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'therubyracer'
+
+# Heroku
+gem 'rails_12factor'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

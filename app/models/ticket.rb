@@ -8,7 +8,8 @@ class Ticket < ApplicationRecord
   validates :passenger, presence: true
 
   before_validation :set_number
-  after_create :send_notification
+  after_create :buy_notification
+  after_destroy :cancel_notification
 
   def route_name
     "#{start_station.name} - #{end_station.name}"
@@ -16,8 +17,12 @@ class Ticket < ApplicationRecord
 
   private
 
-  def send_notification
+  def buy_notification
     TicketsMailer.buy_ticket(self.user, self).deliver_now
+  end
+
+  def cancel_notification
+    TicketsMailer.cancel_ticket(self.user, self).deliver_now
   end
 
   def set_number

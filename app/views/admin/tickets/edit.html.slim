@@ -1,8 +1,12 @@
-h1 Editing ticket
-
-== render 'form'
-
-= link_to 'Show', admin_ticket_path(@ticket)
-'  |
-= link_to 'Back', admin_tickets_path
+.container
+  .card
+    .card-header
+      h3 = t('.title')
+    .card-text
+      .card-block
+        = render 'form'
+    .card-footer
+      = link_to t('common.show'), admin_ticket_path(@ticket)
+      '  |
+      = link_to t('common.back'), admin_tickets_path
 

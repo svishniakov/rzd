@@ -1,3 +1,10 @@
-h1 New Train
-= render 'form', train: @train
-= link_to 'Back', admin_trains_path
+.container
+  .card
+    .card-header
+      h1
+        = t('.title')
+    .card-text
+      .card-block
+        = render 'form', train: @train
+    .card-footer
+      = link_to t('common.back'), admin_trains_path

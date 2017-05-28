@@ -1,0 +1,34 @@
+ru:
+  activerecord:
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        taken: "должно быть уникальным"
+    models:
+      railway_station: "Станция"
+      train: "Поезд"
+      carriage: "Вагон"
+      route: "Маршрут"
+      ticket: "Билет"
+      user: "Пользователь"
+    attributes:
+      railway_station:
+        name: "Название"
+      train:
+        number: "Номер"
+        sort_from_head: "Сортировать от конца поезда?"
+        current_station: "Текущая станция"
+        route: "Маршрут"
+      route:
+        title: "Название"
+      ticket:
+        number: "Название"
+        user: "Пользователь"
+        train: "Поезд"
+        start_station: "От станции"
+        end_station: "До станции"
+        passenger: "Пассажир, ФИО"
+        passport: "Номер паспорта"
+      user:
+        name: "Имя пользователя"
+        admin: "Является администратором?"

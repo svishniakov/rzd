@@ -1,12 +1,13 @@
-h1 Trains
-table
-  thead
-    tr
-      th Number
-      th Current station
-      th Route
-      th[colspan="3"] Actions
-  tbody
-    = render @trains
-br
-= link_to 'New Train', new_admin_train_path
+.container
+  h1 = t('.title')
+  table
+    thead
+      tr
+        th = t('common.train_number')
+        th = t('.current_station')
+        th = t('common.route_title')
+        th[colspan="3"]
+    tbody
+      = render @trains
+  br
+  = link_to t('common.new'), new_admin_train_path

@@ -1,0 +1,144 @@
+ru:
+  common:
+    new: "Создать"
+    back: "Назад"
+    edit: "Изменить"
+    show: "Просмотр"
+    destroy: "Удалить"
+    are_you_sure: "Вы уверены?"
+    train_number: "Номер поезда"
+    route_title: "Название маршрута"
+    departure_time: "Время отправления"
+    arrival_time: "Время прибытия"
+    dashboard: "Админка"
+    search: "Поиск билетов"
+    my_tickets: "Мои билеты"
+    errors: "При заполнении формы возникли ошибки"
+  controllers:
+    created: "%{resource_name} был успешно создан"
+    updated: "%{resource_name} был успешно изменён"
+    destroyed: "%{resource_name} был удалён"
+  welcome:
+    index:
+      welcome: "Добро пожаловать в Thinknetica railway"
+      lead: "Лучшее место для поиска выгодных предложений для ваших будущих путешествий"
+  searches:
+    show:
+      start_station: "От станции"
+      end_station: "До станции"
+      prompt: "выберите станцию"
+      search: "Искать"
+      no_routes_found: "Не найдено маршрутов"
+    buy_button:
+      buy_ticket: "Купить билет"
+  tickets:
+    index:
+      title: "Мои билеты"
+      ticket_number: "Номер билета"
+      passenger: "Пассажир"
+      passport: "Паспорт"
+      train_number: "Номер поезда"
+      start_station: "Начало маршрута"
+      end_station: "Конец машрута"
+    new:
+      title: "Новый билет"
+    form:
+      action: "%{action} билет"
+    show:
+      title: "Данные билета - %{ticket_number}"
+      journey_data: "Маршрут"
+  admin:
+    trains:
+      index:
+        title: "Все поезда"
+        current_station: "Текушая станция"
+      new:
+        title: "Новый поезд"
+      form:
+        submit: "%{action} поезд"
+        route_prompt: "выберите маршрут"
+      edit:
+        title: "Изменение поезда"
+      show:
+        title: "Данные о поезде %{train}"
+        depot: "Находится в депо"
+        not_assigned: "Без марштура"
+        carriages: "Вагоны"
+    railway_stations:
+      new:
+        title: "Новая станция"
+      index:
+        title: "Все станции"
+        name: "Название станции"
+      show:
+        title: "Станция: %{railway_station}"
+      edit:
+        title: "Изменение станции"
+      form:
+        action: "%{action} станцию"
+    routes:
+      new:
+        title: "Новый маршрут"
+      edit:
+        title: "Изменение маршрута"
+      form:
+        railway_stations: "Выберите станции"
+        action: "%{action} маршрут"
+      show:
+        title: "Просмотр и изменение маршрута"
+        name: "Название маршрута"
+        route_stations: "Описание маршрута"
+        route_no_stations: "В маршруте нет станций"
+        assigned_trains: "Поезда на маршруте"
+        route_no_trains: "На маршруте нет поездов"
+      route_stations:
+        name: "Название станции"
+        position: "Позиция в маршруте"
+        time: "Время прибытия и отправления"
+        change_position: "Изменить позицию"
+        change_time: "Изменить время"
+    tickets:
+      index:
+        title: "Все билеты"
+        user: "Пользователь"
+        ticket_number: "Номер билета"
+        passenger: "Пассажир"
+        passport: "Паспорт"
+        train_number: "Номер поезда"
+        start_station: "Начало маршрута"
+        end_station: "Конец машрута"
+      new:
+        title: "Новый билет"
+      edit:
+        title: "Изменить билет"
+      form:
+        action: "%{action} билет"
+        user_prompt: "выберите пользователя"
+        train_prompt: "выберите поезд"
+    carriages:
+      new:
+        title: "Новый вагон"
+      edit:
+        title: "Изменить вагон"
+      show:
+        title: "Данные о вагоне %{carriage_number} в поезде %{train_number}"
+        class: "Тип вагона"
+        seats: "Свободные места"
+      carriage:
+        top_seats: "Верхние места"
+        bottom_seats: "Нижние места"
+        side_top_seats: "Боковые верхние места"
+        side_bottom_seats: "Боковые нижние места"
+        sitting_seats: "Сидячие места"
+      form:
+        action: "%{action} вагон"
+        type_prompt: "выберите тип вагона"
+        train: "Номер поезда"
+        type: "Тип вагона"
+    dashboards:
+      show:
+        admin: "Администрирование системы"
+        all_tickets: "Зарегестрированные билеты"
+        stations: "Станции"
+        trains: "Поезда"
+        routes: "Маршруты"

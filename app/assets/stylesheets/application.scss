@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$font-family-base: 'Open Sans', sans-serif;
+
+@import "bootstrap";
+
+html {
+  font-size: 13px;
+}
+
+label {
+  display: block;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.topbar_shadow {
+  box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6);
+  z-index: 999;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+.alert-notice {
+  @extend .alert-warning;
+}
+
+table {
+  @extend .table;
+  padding: 5px;
+}
+
+thead {
+  @extend .thead-inverse;
+  padding: 5px;
+}

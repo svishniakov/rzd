@@ -1,5 +1,11 @@
-h1 Edit Route
-= render 'form', route: @route
-= link_to 'Show', admin_route_path(@route)
-'  |
-= link_to 'Back', admin_routes_path
+.container
+  .card
+    .card-header
+      h3 = t('.title')
+    .card-text
+      .card-block
+        = render 'form', route: @route
+    .card-footer
+      = link_to t('common.show'), admin_route_path(@route)
+      '  |
+      = link_to t('common.back'), admin_routes_path

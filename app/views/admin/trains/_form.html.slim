@@ -1,16 +1,17 @@
-= form_for [:admin, train] do |f|
-  = render 'common/errors', resource: @train
-  .field
-    = f.label :number
-    = f.text_field :number
-  .field
-    = f.label :sort_fro_head, 'Carriages reverse sorting?'
-    = f.check_box :sort_from_head
-  .field
-    = f.label :current_station
-    = f.collection_select :current_station_id, RailwayStation.order(:name), :id, :name
-  .field
-    = f.label :route
-    = f.collection_select :route_id, Route.order(:title), :id, :title
-  .actions
-    = f.submit
+.container
+  .form
+    = form_for [:admin, train] do |f|
+      = render 'common/errors', resource: @train
+      fieldset.form-group
+        = f.label :number
+        = f.text_field :number, class: 'form-control'
+      fieldset.form-group
+        = f.label :sort_from_head
+        = f.check_box :sort_from_head, class: 'form-control'
+      fieldset.form-group
+        = f.label :current_station
+        = f.collection_select :current_station_id, RailwayStation.order(:name), :id, :name, {prompt: t('searches.show.prompt')}, {class: 'custom-select'}
+      fieldset.form-group
+        = f.label :route
+        = f.collection_select :route_id, Route.order(:title), :id, :title, {prompt: t('.route_prompt')}, {class: 'custom-select'}
+      = f.submit t('.submit', action: train.new_record? ? t('common.new') : t('common.edit')), class: 'btn btn-primary btn-sm'

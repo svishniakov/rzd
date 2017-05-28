@@ -1,6 +1,8 @@
-p
-  b Station name:
-  =< @railway_station.name
-= link_to 'Edit', edit_admin_railway_station_path(@railway_station)
-'  |
-= link_to 'Back', admin_railway_stations_path
+.container
+  .card
+    .card-header
+      h2 = t('.title', railway_station: @railway_station.name)
+    .card-footer
+      = link_to t('common.edit'), edit_admin_railway_station_path(@railway_station)
+      '  |
+      = link_to t('common.back'), admin_railway_stations_path

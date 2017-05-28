@@ -1,4 +1,9 @@
-p
-  = link_to 'Search', search_path
-p
-  = link_to 'My tickets', tickets_path
+.jumbotron.text-center
+  .container-fluid
+    h1.jumbotron-heading
+      = t('.welcome')
+    p.lead.text-muted
+      = t('.lead')
+    p
+      = link_to t('common.search'), search_path, class: 'btn btn-primary'
+      = link_to t('common.my_tickets'), tickets_path, class: 'btn btn-secondary'

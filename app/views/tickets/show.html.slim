@@ -1,26 +1,32 @@
-strong Number:
-=< @ticket.number
-br
-strong Passenger:
-=< @ticket.passenger
-br
-strong Passport:
-=< @ticket.passport
-br
-strong Journey data:
+.container
+  .card
+    .card-header
+      h3 = t('tickets.show.title', ticket_number: @ticket.number)
+    .card-text
+      p
+        ul
+          li
+            strong = t('tickets.index.passenger')
+            ' :
+            =< @ticket.passenger
+          li
+            strong = t('tickets.index.passport')
+            ' :
+            =< @ticket.passport
+          li
+            strong = t('.journey_data')
+            table
+              thead
+                tr
+                  th = t('common.train_number')
+                  th = t('searches.show.start_station')
+                  th = t('searches.show.end_station')
+              tbody
+                tr
+                  td = @ticket.train.number
+                  td = @ticket.start_station.name
+                  td = @ticket.end_station.name
 
-table
-  thead
-    tr
-      td Train number
-      td From station
-      td To station
-  tbody
-    tr
-      td = @ticket.train.number
-      td = @ticket.start_station.name
-      td = @ticket.end_station.name
-
-=> link_to 'New search', search_path
-' |
-=< link_to 'Back', tickets_path
+  => link_to t('common.search'), search_path
+  ' |
+  =<> link_to t('common.back'), tickets_path

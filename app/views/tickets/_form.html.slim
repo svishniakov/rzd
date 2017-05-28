@@ -1,12 +1,17 @@
-= form_for @ticket do |f|
-  = render 'common/errors', resource: @ticket
-  = f.hidden_field :train_id, value: params[:train_id]
-  = f.hidden_field :start_station_id, value: params[:start_station_id]
-  = f.hidden_field :end_station_id, value: params[:end_station_id]
-  .field
-    = f.label :passenger
-    = f.text_field :passenger
-  .field
-    = f.label :passport
-    = f.text_field :passport
-  .actions = f.submit
+.container
+  = form_for @ticket do |f|
+    = render 'common/errors', resource: @ticket
+    = f.hidden_field :train_id, value: params[:train_id]
+    = f.hidden_field :start_station_id, value: params[:start_station_id]
+    = f.hidden_field :end_station_id, value: params[:end_station_id]
+    .form-group.row
+      .col-sm-2.col-form-label
+        = f.label :passenger
+      .col-sm-10
+        = f.text_field :passenger
+      .col-sm-2.col-form-label
+        = f.label :passport
+      .col-sm-10
+        = f.text_field :passport
+    .form-group.row
+      = f.submit t('.action', action: @ticket.new_record? ? t('common.new') : t('common.edit')), class: 'btn btn-primary'

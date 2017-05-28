@@ -3,9 +3,12 @@ tr
   td = train.current_station.name unless train.current_station.nil?
   td
     - if train.route.nil?
-      |  Not assigned to route
+      = t('searches.show.no_routes_found')
     - else
       = train.route.title
-  td = link_to 'Show', admin_train_path(train)
-  td = link_to 'Edit', edit_admin_train_path(train)
-  td = link_to 'Destroy', admin_train_path(train), method: :delete, data: { confirm: 'Are you sure?' }
+  td
+    .btn.btn-outline-success.btn-sm = link_to t('common.show'), admin_train_path(train)
+  td
+    .btn.btn-outline-info.btn-sm = link_to t('common.edit'), edit_admin_train_path(train)
+  td
+    .btn.btn-outline-danger.btn-sm = link_to t('common.destroy'), admin_train_path(train), method: :delete, data: { confirm: t('common.are_you_sure') }

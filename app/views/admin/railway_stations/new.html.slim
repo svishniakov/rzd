@@ -1,3 +1,10 @@
-h1 New Railway Station
-= render 'form', railway_station: @railway_station
-= link_to 'Back', admin_railway_stations_path
+.container
+  .card
+    .card-header
+      h1
+        = t('.title')
+    .card-text
+      .card-block
+        = render 'form', railway_station: @railway_station
+    .card-footer
+      = link_to 'Back', admin_railway_stations_path

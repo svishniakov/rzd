@@ -1,3 +1,10 @@
-h1 New ticket
-== render 'form', ticket: @ticket
-= link_to 'Back', admin_tickets_path
+.container
+  .card
+    .card-header
+      h1
+        = t('.title')
+    .card-text
+      .card-block
+        = render 'form', ticket: @ticket
+    .card-footer
+      = link_to t('common.back'), admin_tickets_path

@@ -14,3 +14,6 @@ nav.navbar.navbar-toggleable-md.navbar-inverse.bg-inverse.topbar_shadow
             = current_user.name
           .dropdown-menu[aria-labelledby="dropdown"]
             = link_to t('devise.common.sign_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item'
+      - else
+        li.nav-item
+          = link_to t('devise.common.sign_in'), new_user_session_path, class: 'nav-link'

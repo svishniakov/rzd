@@ -18,6 +18,7 @@
           li
             = t('.assigned_trains')
             - if @route.trains.empty?
+              br
               = t('.route_no_trains')
             - else
               = render 'admin/routes/route_trains', route: @route

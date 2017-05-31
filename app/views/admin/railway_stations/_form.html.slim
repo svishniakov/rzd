@@ -1,8 +1,7 @@
-.container
-  .form
-    = form_for [:admin, railway_station] do |f|
-      = render 'common/errors', resource: @railway_station
-      fieldset.form-group
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
-      = f.submit t('.action', action: railway_station.new_record? ? t('common.new') : t('common.edit')), class: 'btn btn-primary btn-sm'
+.form
+  = form_for [:admin, railway_station], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |f|
+    = render 'common/errors', resource: railway_station
+    fieldset.form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control'
+    = f.submit t('.action', action: railway_station.new_record? ? t('common.new') : t('common.edit')), class: 'btn btn-primary btn-sm'

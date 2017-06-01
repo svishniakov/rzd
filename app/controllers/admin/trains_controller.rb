@@ -18,7 +18,7 @@ class Admin::TrainsController < Admin::BaseController
   def create
     @train = Train.new(train_params)
     if @train.save
-      redirect_to admin_trains_path(@train), notice: t('controllers.created', resource_name: @train.model_name.human)
+      redirect_to admin_trains_path, notice: t('controllers.created', resource_name: @train.model_name.human)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::TrainsController < Admin::BaseController
 
   def update
     if @train.update(train_params)
-      redirect_to admin_train_path(@train), notice: t('controllers.updated', resource_name: @train.model_name.human)
+      redirect_to admin_trains_path, notice: t('controllers.updated', resource_name: @train.model_name.human)
     else
       render :edit
     end

@@ -4,7 +4,7 @@
       h3 = t('.title')
     .card-text
       .card-block
-        = render 'form', railway_station: @railway_station
+        = render 'form', railway_station: @railway_station, hidden: false
     .card-footer
       = link_to t('common.show'), admin_railway_station_path(@railway_station)
       '  |

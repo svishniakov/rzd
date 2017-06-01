@@ -4,7 +4,7 @@
       h3 = t('.title')
     .card-text
       .card-block
-        = render 'form', route: @route
+        = render 'form', route: @route, hidden: false
     .card-footer
       = link_to t('common.show'), admin_route_path(@route)
       '  |

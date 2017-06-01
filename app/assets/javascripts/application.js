@@ -11,13 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require tether
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require turbolinks-compatibility
 //= require_tree .
-
-
-$('.card-deck-wrapper').on('click', function(event) {
-    alert('You clicked the Bootstrap Card');
-});

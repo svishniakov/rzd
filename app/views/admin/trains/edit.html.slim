@@ -4,7 +4,7 @@
       h3 = t('.title')
     .card-text
       .card-block
-        = render 'form', train: @train
+        = render 'form', train: @train, hidden: false
     .card-footer
       = link_to t('common.show'),admin_train_path(@train)
       |  |

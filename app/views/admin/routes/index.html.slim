@@ -9,11 +9,14 @@
     tbody
       - @routes.each do |route|
         tr
-          td = route.title
+          td
+            div id="route_title_#{route.id}"
+              = route.title
+            = render 'form', route: route, hidden: true
           td
             .btn.btn-outline-success.btn-sm = link_to t('common.show'), admin_route_path(route)
           td
-            .btn.btn-outline-info.btn-sm = link_to t('common.edit'), edit_admin_route_path(route)
+            .btn.btn-outline-info.btn-sm = link_to t('common.edit'), '', class: 'edit_route', data: { route_id: route.id}
           td
             .btn.btn-outline-danger.btn-sm = link_to t('common.destroy'), admin_route_path(route), method: :delete, data: { confirm: t('common.are_you_sure') }
   br

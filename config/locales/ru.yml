@@ -4,6 +4,7 @@ ru:
     back: "Назад"
     edit: "Изменить"
     show: "Просмотр"
+    cancel: "Отмена"
     destroy: "Удалить"
     are_you_sure: "Вы уверены?"
     train_number: "Номер поезда"

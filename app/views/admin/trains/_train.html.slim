@@ -1,14 +1,11 @@
 tr
-  td = train.number
-  td = train.current_station.name unless train.current_station.nil?
   td
-    - if train.route.nil?
-      = t('searches.show.no_routes_found')
-    - else
-      = train.route.title
+    div id="train_number_#{train.id}"
+      = train.number
+    = render 'form', train: train, hidden: true
   td
     .btn.btn-outline-success.btn-sm = link_to t('common.show'), admin_train_path(train)
   td
-    .btn.btn-outline-info.btn-sm = link_to t('common.edit'), edit_admin_train_path(train)
+    .btn.btn-outline-info.btn-sm = link_to t('common.edit'), '', class: 'edit_train', data: { train_id: train.id}
   td
     .btn.btn-outline-danger.btn-sm = link_to t('common.destroy'), admin_train_path(train), method: :delete, data: { confirm: t('common.are_you_sure') }

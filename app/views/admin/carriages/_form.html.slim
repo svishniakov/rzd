@@ -8,19 +8,23 @@
         = f.select :type, ([['Saloon', SaloonCarriage.name], ['Economy', EconomyCarriage.name],\
                             ['Sleeping', SleepingCarriage.name], ['Sitting', SittingCarriage.name]])\
                             , {prompt: t('.type_prompt')}, {class: 'custom-select'}
-      fieldset.form-group
-        = f.label t('admin.carriages.carriage.top_seats')
-        = f.number_field :top_seats, class: 'form-control'
-      fieldset.form-group
-        = f.label t('admin.carriages.carriage.bottom_seats')
-        = f.number_field :bottom_seats, class: 'form-control'
-      fieldset.form-group
-        = f.label t('admin.carriages.carriage.side_top_seats')
-        = f.number_field :side_top_seats, class: 'form-control'
-      fieldset.form-group
-        = f.label t('admin.carriages.carriage.side_bottom_seats')
-        = f.number_field :side_bottom_seats, class: 'form-control'
-      fieldset.form-group
-        = f.label t('admin.carriages.carriage.sitting_seats')
-        = f.number_field :sitting_seats, class: 'form-control'
+      div id="bottom" style="display:none"
+        fieldset.form-group
+          = f.label t('admin.carriages.carriage.bottom_seats')
+          = f.number_field :bottom_seats, class: 'form-control'
+      div id="top" style="display:none"
+        fieldset.form-group
+          = f.label t('admin.carriages.carriage.top_seats')
+          = f.number_field :top_seats, class: 'form-control'
+      div id="economy" style="display:none"
+        fieldset.form-group
+          = f.label t('admin.carriages.carriage.side_bottom_seats')
+          = f.number_field :side_bottom_seats, class: 'form-control'
+        fieldset.form-group
+          = f.label t('admin.carriages.carriage.side_top_seats')
+          = f.number_field :side_top_seats, class: 'form-control'
+      div id="sitting" style="display:none"
+        fieldset.form-group
+          = f.label t('admin.carriages.carriage.sitting_seats')
+          = f.number_field :sitting_seats, class: 'form-control'
       = f.submit t('.action', action: @carriage.new_record? ? t('common.new') : t('common.edit')), class: 'btn btn-primary btn-sm'

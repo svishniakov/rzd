@@ -5,6 +5,6 @@
         = t('.title')
     .card-text
       .card-block
-        = render 'form', railway_station: @railway_station
+        = render 'form', railway_station: @railway_station, hidden: false
     .card-footer
       = link_to 'Back', admin_railway_stations_path
